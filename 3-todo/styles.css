@@ -118,11 +118,6 @@ body {
   color: #dc2626;
 }
 
-.completed .task__text {
-  text-decoration: line-through;
-  color: #888;
-}
-
 .footer-row {
   display: flex;
   align-items: center;

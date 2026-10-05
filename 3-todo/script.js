@@ -44,6 +44,14 @@ function clearCompleted() {
 }
 
 function getVisibleTasks() {
+  if (currentFilter === "active") {
+    return tasks.filter((t) => !t.done);
+  }
+
+  if (currentFilter === "done") {
+    return tasks.filter((t) => t.done);
+  }
+
   return tasks;
 }
 
@@ -62,7 +70,7 @@ function render() {
     li.className = "task";
     
     if (task.done) {
-      li.classList.add("completed");
+      li.classList.add("done");
     }
 
     const span = document.createElement("span");
