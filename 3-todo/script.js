@@ -22,6 +22,7 @@ function addTask() {
   errorEl.hidden = true;
   tasks.push({ id: nextId++, text: text, done: false });
   input.value = "";
+  input.focus();
   render();
 }
 
