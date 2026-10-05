@@ -84,9 +84,12 @@ function clearCart() {
 
 function renderCart() {
   cartItemsEl.innerHTML = "";
-  let total = "";
+
+  let total = 0;
+
   cart.forEach((item) => {
-    const lineTotal = item.price;
+    const lineTotal = item.price * item.qty;
+
     const li = document.createElement("li");
     li.className = "cart-item";
     li.innerHTML = `<span>${item.name}</span>
@@ -99,7 +102,8 @@ function renderCart() {
     li.querySelector('[data-act="dec"]').addEventListener("click", () => decreaseQty(item.id));
     li.querySelector(".remove").addEventListener("click", () => removeItem(item.id));
     cartItemsEl.appendChild(li);
-    total += item.price * item.qty;
+
+    total += lineTotal;
   });
 
   if (discount) {
