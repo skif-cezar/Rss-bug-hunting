@@ -18,12 +18,12 @@ const countEl = document.getElementById("count");
 
 function getFiltered() {
   let result = [...products];
-  const search = searchInput.value;
+  const search = searchInput.value.trim().toLowerCase();
   const category = categorySelect.value;
   const sort = sortSelect.value;
 
   if (search) {
-    result = result.filter((p) => p.name === search);
+    result = result.filter((p) => p.name.toLowerCase().includes(search));
   }
 
   if (category !== "all") {
