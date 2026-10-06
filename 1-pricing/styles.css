@@ -77,6 +77,9 @@ body {
 }
 
 .features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   list-style: none;
   margin-bottom: 24px;
   text-align: left;
@@ -84,7 +87,7 @@ body {
 
 .features li {
   padding: 0;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .features li::before {
@@ -95,6 +98,7 @@ body {
 }
 
 .btn {
+  align-self: center;
   margin-top: auto;
   display: inline-block;
   padding: 12px 28px;
